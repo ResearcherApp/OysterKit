@@ -234,7 +234,7 @@ public class SwiftStructure : Generator{
     ///  - Returns: A single `TextFile` containing the Swift source
     public static func generate(for scope: STLR, grammar name:String, accessLevel:String) throws -> [Operation] {
         let name   = scope.grammar.scopeName
-        let output = TextFile("\(name).swift")
+        let output = TextFile("\(name)Grammar.swift")
         
         let tokenFile = TextFile("")
         scope.swift(in: tokenFile)

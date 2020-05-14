@@ -130,7 +130,7 @@ fileprivate extension GrammarStructure.Node {
         }).joined(separator: " else ").split(separator: "\n").forEach({output.print(String($0))})
         
         output.print(
-            "throw DecodingError.valueNotFound(Expression.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: \"Tried to decode one of \(children.map({$0.dataType(accessLevel).dropLast()}).joined(separator: ",")) but found none of those types\"))"
+            "throw DecodingError.valueNotFound(\(dataType(accessLevel)).self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: \"Tried to decode one of \(children.map({$0.dataType(accessLevel).dropLast()}).joined(separator: ",")) but found none of those types\"))"
             ).outdent().print("}")
         
         output.print("\(accessLevel) func encode(to encoder:Encoder) throws {").indent()
@@ -282,7 +282,7 @@ public class SwiftStructure : Generator{
                 "return try ParsingDecoder().decode(\(name).self, using: root)").outdent().print(
                     "}",
                     "",
-                    "\(accessLevel) static var generatedLanguage : Grammar {return Parser(grammar:\(name)Tokens.generatedRules)}"
+                    "\(accessLevel) static var generatedLanguage : Grammar {return \(name)Tokens.generatedRules}"
         )
         
         output.outdent().print("}")

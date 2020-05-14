@@ -521,11 +521,11 @@ public class GrammarStructure {
 
 fileprivate extension Array where Element == GrammarStructure.Node {
     
-    fileprivate subscript(_ name:String)->GrammarStructure.Node? {
+    subscript(_ name:String)->GrammarStructure.Node? {
         return self.filter({$0.name == name}).first
     }
     
-    fileprivate func consolidate(accessLevel:String)->[Element]{
+    func consolidate(accessLevel:String)->[Element]{
         var existingFields = [String : GrammarStructure.Node]()
         
         for child in self {
@@ -536,7 +536,7 @@ fileprivate extension Array where Element == GrammarStructure.Node {
                 } else if existingType.arrayElement(is: child.dataType(accessLevel)){
                     //Do nothing, it will work fine
                 } else {
-                    fatalError("There are multiple fields with the same name (\(child.name)) but different types:\n\t\(child.dataType)\n\t\(existingType)\nCannot generate structure")
+                  fatalError("There are multiple fields with the same name (\(child.name)) but different types:\n\t\(String(describing: child.dataType))\n\t\(existingType)\nCannot generate structure")
                 }
             } else {
                 existingFields[child.name] = child

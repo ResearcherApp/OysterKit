@@ -305,7 +305,7 @@ class FullSwiftGenerationTest: XCTestCase {
         
     }
 
-    fileprivate let characterSetNames = ["letter","uppercaseLetter","lowercaseLetter","alphaNumeric","decimalDigit","whitespaceOrNewline","whitespace","newline","backslash","customSet"]
+    fileprivate let characterSetNames = ["letter","uppercaseLetter","lowercaseLetter","alphaNumeric","decimalDigit","whitespaceOrNewline","whitespace","newline","backslash"]
     
     func testCharacterSetName(){
         XCTAssertNoThrow(try checkSimplePassFail(for: .characterSetName, passing: characterSetNames, failing: ["sdfsdf",".anything"], expectNode: false))

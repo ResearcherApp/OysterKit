@@ -576,8 +576,6 @@ extension STLR.CharacterSet {
             return CharacterSet.newlines
         case .backslash:
             return "\\"
-        case .customSet:
-            return CharacterSet.customSet
         }
     }
     

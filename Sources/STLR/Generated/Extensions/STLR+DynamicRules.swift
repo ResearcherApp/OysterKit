@@ -211,8 +211,6 @@ extension STLR.CharacterSetName {
             return CharacterSet.newlines
         case .backslash:
             return CharacterSet(charactersIn: "\\")
-        case .customSet:
-            return CharacterSet.customSet
         }
     }
 }

@@ -48,8 +48,6 @@ extension CharacterSet : Terminal {
             return ".newline"
         } else if self == CharacterSet.whitespacesAndNewlines {
           return ".whitespaceOrNewline"
-        } else if self == CharacterSet.customSet {
-          return ".customSet"
         }
         
         let selfDescription = "\(self)"
@@ -71,11 +69,3 @@ extension CharacterSet : Terminal {
         }
     }
 }
-
-// TO BE OVERRIDDEN
-public extension CharacterSet {
-  static var customSet: CharacterSet {
-    return .uppercaseLetters
-  }
-}
-

@@ -39,7 +39,7 @@ extension CharacterSet : Terminal {
         } else if self == CharacterSet.uppercaseLetters {
             return ".uppercaseLetter"
         } else if self == CharacterSet.lowercaseLetters {
-            return ".uppercaseLetter"
+            return ".lowercaseLetter"
         } else if self == CharacterSet.alphanumerics {
             return ".alphaNumeric"
         } else if self == CharacterSet.whitespaces {

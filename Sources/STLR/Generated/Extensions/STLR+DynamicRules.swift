@@ -211,8 +211,17 @@ extension STLR.CharacterSetName {
             return CharacterSet.newlines
         case .backslash:
             return CharacterSet(charactersIn: "\\")
+        case .custom:
+            return CharacterSet.custom
         }
     }
+}
+
+// TO BE OVERRIDDEN
+public extension CharacterSet {
+  static var custom: CharacterSet {
+    return .uppercaseLetters
+  }
 }
 
 extension STLR.Terminal {

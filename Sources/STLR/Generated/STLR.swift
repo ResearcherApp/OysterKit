@@ -325,7 +325,7 @@ public struct STLR : Codable {
     
     // CharacterSetName
     public enum CharacterSetName : Swift.String, Codable, CaseIterable {
-        case letter,uppercaseLetter,lowercaseLetter,alphaNumeric,decimalDigit,whitespaceOrNewline,whitespace,newline,backslash
+        case letter,uppercaseLetter,lowercaseLetter,alphaNumeric,decimalDigit,whitespaceOrNewline,whitespace,newline,backslash,custom
     }
     
     /// CharacterSet 

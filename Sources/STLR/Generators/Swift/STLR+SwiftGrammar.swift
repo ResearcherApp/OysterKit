@@ -249,8 +249,8 @@ extension STLR.Terminal {
                 return "CharacterSet.whitespacesAndNewlines"
             case .backslash:
                 return "\\".asSwiftString
-            case .custom:
-                return "CharacterSet.custom"
+            case .customSet:
+                return "CharacterSet.customSet"
             case .letter, .uppercaseLetter, .lowercaseLetter, .alphaNumeric, .decimalDigit, .whitespace, .newline:
                 return "CharacterSet\(self)s"
             }

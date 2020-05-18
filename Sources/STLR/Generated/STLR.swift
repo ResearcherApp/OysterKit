@@ -81,7 +81,7 @@ internal enum STLRTokens : Int, TokenType, CaseIterable, Equatable {
                             
             /// characterSetName
             case .characterSetName:
-                return [    "letter",    "uppercaseLetter",    "lowercaseLetter",    "alphaNumeric",    "decimalDigit",    "whitespaceOrNewline",    "whitespace",    "newline",    "backslash"].choice.reference(.structural(token: self))
+                return [    "letter",    "uppercaseLetter",    "lowercaseLetter",    "alphaNumeric",    "decimalDigit",    "whitespaceOrNewline",    "whitespace",    "newline",    "backslash",    "customSet"].choice.reference(.structural(token: self))
                             
             /// characterSet
             case .characterSet:
@@ -325,7 +325,7 @@ public struct STLR : Codable {
     
     // CharacterSetName
     public enum CharacterSetName : Swift.String, Codable, CaseIterable {
-        case letter,uppercaseLetter,lowercaseLetter,alphaNumeric,decimalDigit,whitespaceOrNewline,whitespace,newline,backslash,custom
+        case letter,uppercaseLetter,lowercaseLetter,alphaNumeric,decimalDigit,whitespaceOrNewline,whitespace,newline,backslash,customSet
     }
     
     /// CharacterSet 
